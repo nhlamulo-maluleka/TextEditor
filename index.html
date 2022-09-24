@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Editor</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      type="module"
+      src="http://localhost:3000/nicroni/cdn/nicroni.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script type="module" src="js/code.js" defer></script>
+  </head>
+  <body class="p-0 m-0">
+    <div class="window h-100vh">
+      <div
+        class="nav d-grid grid-template-col-(1fr,1fr,1fr) p-10px bg-color-rgba(0,0,0,.8) color-children-#fff"
+      >
+        <div class="nav_menu d-flex gap-1rem">
+          <div class="logo">Logo</div>
+          <div>File</div>
+          <div>Edit</div>
+          <div>Selection</div>
+        </div>
+        <div class="view_filename al-center ff-calibri">index.html - Nicroni Code</div>
+        <div class="view_controls al-right ff-ebrima">Controls</div>
+      </div>
+
+      <div
+        class="horizontal d-grid grid-template-col-(.05fr,.15fr,1fr) bg-color-rgba(2,2,2,.8) color-children-#fff h-95%"
+      >
+        <div class="side_menu al-center">
+          <h3>H</h3>
+        </div>
+        <div class="file_structure">
+          <h4>EXPLORER</h4>
+		  <div class="tree">
+			<ul>
+				<h5>TEXT EDITOR</h5>
+				<li>+</li>
+			</ul>
+		  </div>
+        </div>
+        <div class="code_editor">
+          <div class="fileNames d-flex">
+            <label class="current">index.html</label>
+            <label>code.js</label>
+          </div>
+          <div contenteditable="true" class="container"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
