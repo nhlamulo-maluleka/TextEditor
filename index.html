@@ -7,8 +7,12 @@
     <title>Text Editor</title>
     <link rel="stylesheet" href="css/style.css" />
     <script
+      src="https://kit.fontawesome.com/f216db38bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
       type="module"
-      src="http://localhost:3000/nicroni/cdn/nicroni.js"
+      src="https://nicroni.herokuapp.com/nicroni/cdn/nicroni.js"
       crossorigin="anonymous"
       defer
     ></script>
@@ -25,31 +29,48 @@
           <div>Edit</div>
           <div>Selection</div>
         </div>
-        <div class="view_filename al-center ff-calibri">index.html - Nicroni Code</div>
+        <div class="view_filename al-center ff-calibri">
+          index.html - Nicroni Code
+        </div>
         <div class="view_controls al-right ff-ebrima">Controls</div>
       </div>
-
       <div
         class="horizontal d-grid grid-template-col-(.05fr,.15fr,1fr) bg-color-rgba(2,2,2,.8) color-children-#fff h-95%"
       >
-        <div class="side_menu al-center">
-          <h3>H</h3>
+        <div
+          class="side_menu al-center d-block center-children fs-children-19pt mt-children-1rem"
+        >
+          <i class="fa-regular fa-file"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-gear"></i>
         </div>
         <div class="file_structure">
-          <h4>EXPLORER</h4>
-		  <div class="tree">
-			<ul>
-				<h5>TEXT EDITOR</h5>
-				<li>+</li>
-			</ul>
-		  </div>
+          <h4
+            class="m-0 p-10px ff-calibri d-grid grid-template-col-(1fr,1fr) bg-color-brown"
+          >
+            <label>EXPLORER</label>
+            <div class="d-flex al-right gap-10px">
+              <i class="fa-solid fa-file-circle-plus" id="newFile"></i>
+              <i class="fa-solid fa-folder-plus" id="newFolder"></i>
+            </div>
+          </h4>
+          <div class="tree center-left">
+            <ul id="rootTreeNode" class="d-block">
+              <div class="al-left gap-10px ff-calibri m-0 mb-.5rem">
+                <i class="fa-solid fa-chevron-down"></i>
+                <label>TEXT EDITOR</label>
+              </div>
+            </ul>
+          </div>
         </div>
         <div class="code_editor">
           <div class="fileNames d-flex">
             <label class="current">index.html</label>
             <label>code.js</label>
           </div>
-          <div contenteditable="true" class="container"></div>
+          <div class="contentContainer">
+            <div contenteditable="true" class="container"></div>
+          </div>
         </div>
       </div>
     </div>
