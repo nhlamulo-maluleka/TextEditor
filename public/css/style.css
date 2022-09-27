@@ -16,6 +16,7 @@ body{
     padding: 1px;
     outline: none;
     border: 0;
+    overflow-y: auto;
 }
 
 .line {
@@ -80,4 +81,23 @@ body{
 
 .fileNames label.current{
     background-color: var(--bg-code);
+}
+
+#newFile,
+#newFolder{
+    cursor: pointer;
+}
+
+.contentContainer{
+    background-color: transparent;
+    height: 90vh;
+    overflow-y: auto;
+}
+
+.contentContainer::-webkit-scrollbar{
+    width: 5px;
+}
+
+.contentContainer::-webkit-scrollbar-thumb{
+    background-color: grey;
 }
