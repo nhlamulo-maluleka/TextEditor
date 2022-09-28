@@ -1,8 +1,11 @@
+var nextLineNode = null;
+
 const changeActiveLine = () => {
     const prevLine = document.querySelector(".active");
+
     if (prevLine) {
-        const last = prevLine.children.length;
-        prevLine.children[last - 1].remove();
+        nextLineNode = prevLine.lastChild;
+        prevLine.lastChild.remove();
         prevLine.classList.remove("active");
     }
     return prevLine;
@@ -38,6 +41,7 @@ const createNewLine = () => {
         return () => {
             const lineContent = document.createElement("div");
             lineContent.classList.add("lineContent");
+            if(nextLineNode) lineContent.innerText = nextLineNode.innerText;
 
             return () => {
                 line.appendChild(lineNumber);
@@ -45,7 +49,7 @@ const createNewLine = () => {
 
                 if (node?.nextSibling) {
                     container.insertBefore(line, node.nextSibling);
-                    
+
                     /**
                      * Using LinkedList to update line numbers
                      * --------------------------------------------------------------
@@ -53,7 +57,7 @@ const createNewLine = () => {
                      * As my first attempt with this approach was not successful!!  
                      * --------------------------------------------------------------
                      */
-                     updateLineNumbers(line.nextSibling);
+                    updateLineNumbers(line.nextSibling);
                 }
                 else container.appendChild(line);
             };
